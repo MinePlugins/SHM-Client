@@ -1,4 +1,4 @@
-# SHM-Client
+# SHM-Client :computer:
 
 Un utilitaire de gestion de machine tel que WIndows / Linux / Mac OSX mais optimisé pour TinkerBoard et Raspberry Pi
 
