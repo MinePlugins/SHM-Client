@@ -469,6 +469,7 @@ class syslog(Thread):
 
     def first(self):
         try:
+            print(str(self.ip) + ":" + str(self.port))
             url = "http://" + str(self.ip) + ":" + str(self.port) + "/devices"
             r = requests.post(url,
                               data={'system': self.platform.system, 'cpu': self.platform.processor,
