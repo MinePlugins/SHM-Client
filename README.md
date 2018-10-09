@@ -44,3 +44,8 @@ Puis connectez-vous à l'adresse de votre machine avec le port 5000
 - Cloner le git
 - Installer Python3 et les dépendances
 - Lancer le script python
+
+# Configuration
+
+Connectez-vous grâce à l'adresse IP:5000 de la machine (http://localhost:5000) et suivez l'utilitaire d'installation
+
