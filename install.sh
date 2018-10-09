@@ -12,15 +12,15 @@ echo "${green}Installation des dépendances python${reset}"
 sudo apt-get install git cron python3 python3-pip python3-setuptools python3-numpy python3-dev -y
 
 echo "${green}Clone du repository SHM${reset}"
-mkdir /home/SHM
-cd /home/SHM
-rm -rf SHM-Client
-git clone https://github.com/MinePlugins/SHM-Client.git
+sudo mkdir /home/SHM
+sudo cd /home/SHM
+sudo rm -rf SHM-Client
+sudo git clone https://github.com/MinePlugins/SHM-Client.git
 
 echo "${green}Ajout au crontab reboot${reset}"
 
 line="@reboot ./home/SHM/SHM-Client/start.sh"
-(crontab -l; echo "$line" ) | crontab -u -
+(crontab -l; echo "$line" ) | crontab -
 
 echo "${green}Installation des paquet python${reset}"
 
@@ -33,10 +33,10 @@ sudo pip3 install requests
 
 echo "${green}Lancement du script${reset}"
 echo "${green} Ecoute sur l'ip :"
-hostname -I | cut -d' ' -f1
+sudo hostname -I | cut -d' ' -f1
 echo "${reset}"
 
 cd /home/SHM/SHM-Client/hyperviseur-client/
-python3 hyperviseur.py
+sudo python3 hyperviseur.py
 
 echo "${green}FIN${reset}"
