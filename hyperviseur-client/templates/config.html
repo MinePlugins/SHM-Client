@@ -1,0 +1,73 @@
+{% include 'header.html' %}
+
+<div class="ui container segment">
+    <h1>Paramètre de la badgeuse</h1>
+    <form class="ui form" method="post" action="config">
+        <div class="field">
+            <label>IP du panel
+                <small>(0.0.0.0 pour laisser un accés de n'import où)</small>
+            </label>
+            <input type="text" name="ipp" value="{{ ipp }}">
+        </div>
+        <div class="field">
+            <label>Port du panel
+                <small>(5000 par défaut)</small>
+            </label>
+            <input type="text" name="portp" value="{{ portp }}">
+        </div>
+        <div class="field">
+            <label>IP dy SysLog
+                <small>(L'ip du serveur de log)</small>
+            </label>
+            <input type="text" name="sysloghost" value="{{ sysloghost }}">
+        </div>
+        <div class="field">
+            <label>Port du SysLog
+                <small>(3000 port du serveur de log)</small>
+            </label>
+            <input type="text" name="syslogport" value="{{ syslogport }}">
+        </div>
+        <div class="field">
+            <label>Fréquence d'envoi au SysLog
+                <small>(En seconde 60 par défaut)</small>
+            </label>
+            <input type="number" name="refreshtime" value="{{ refreshtime }}">
+        </div>
+        <div class="field">
+            <label>Nom de l'appareil
+                <small>Un nom qui le caractérise</small>
+            </label>
+            <input type="text" name="name" value="{{ name }}">
+        </div>
+        <div class="field">
+            <label>Serveur externe à pinger
+                <small>(http://google.fr)</small>
+            </label>
+            <input type="text" name="ext" value="{{ ext }}">
+        </div>
+        <div class="field">
+            <label>Mot de passe
+                <small>(Un mot de passe de plus 6 caractères)</small>
+            </label>
+            <input type="password" name="password" placeholder="Mot de passe">
+        </div>
+        <div class="field">
+            <label>UID
+                <small>(L'UID du l'appareil (si définie lors de l'initialisation))</small>
+            </label>
+            <input type="text" name="" value="{{ uid }}" disabled>
+        </div>
+        <div class="field">
+            <div class="ui toggle checkbox">
+                <input type="checkbox" name="debug" {% if debug %}checked{% endif %}>
+                <label>Mode debug</label>
+            </div>
+        </div>
+        <button class="ui button" type="submit">Envoyer</button>
+    </form>
+</div>
+
+{% include 'footer.html' %}
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta class="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{{ titre }}</title>
+    <link href="{{ url_for('static', filename='semantic.min.css') }}" rel="stylesheet" type="text/css"/>
+    <script src="/static/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='semantic.min.js') }}"></script>
+
+</head>
+<body>
+
+<div class="ui container">
+    <br>
+    <h2>Installations</h2>
+    <div class="ui steps">
+    <div class="active step">
+        <i class="user icon"></i>
+        <div class="content">
+            <div class="title">Etape 1</div>
+            <div class="description">Choisir un identifiant et un mot de passe</div>
+        </div>
+    </div>
+    <div class="disabled step">
+        <i class="server icon"></i>
+        <div class="content">
+            <div class="title">Etape 2</div>
+            <div class="description">Configuration</div>
+        </div>
+    </div>
+    <div class="disabled step">
+        <i class="info icon"></i>
+        <div class="content">
+            <div class="title">Finalisation</div>
+        </div>
+    </div>
+</div>
+<div class="ui container segment">
+    <h1>Identifiant</h1>
+    <form class="ui form" method="post" action="install">
+        <div class="field">
+            <label>Nom d'utilisaeur</label>
+            <input type="text" name="username">
+        </div>
+        <div class="field">
+            <label>Mot de passe</label>
+            <input type="password" name="password">
+        </div>
+        <button class="ui button" type="submit">Envoyer</button>
+    </form>
+</div>
+</div>
+{% include 'footer.html' %}
+</body>
+
+</html>

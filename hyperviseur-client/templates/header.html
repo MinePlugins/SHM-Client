@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta class="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{{ titre }}</title>
+    <link href="{{ url_for('static', filename='semantic.min.css') }}" rel="stylesheet" type="text/css"/>
+    <script src="/static/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='semantic.min.js') }}"></script>
+
+</head>
+<body>
+<div class="ui fixed inverted menu">
+    <div class="ui container">
+        <a href="/" class="header item">
+            <!--<img class="logo" src="images/logo.png">-->
+            SHM
+        </a>
+        <a href="/" class="item">Accueil</a>
+        <a href="/status" class="item">Status</a>
+        <a href="/log" class="item">Log</a>
+        <a href="/config" class="item">Configuration</a>
+        <a href="/pid" class="item">Processus Status</a>
+        <a href="/console" class="item">Terminal</a>
+        <a href="/logout" class="item right">{{ username }}</a>
+
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="ui container">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="ui info message">
+        <i class="close icon"></i>
+        <div class="header">
+            <ul class="list">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+    {% endwith %}
+</div>

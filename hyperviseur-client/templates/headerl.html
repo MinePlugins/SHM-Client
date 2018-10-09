@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta class="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{{ titre }}</title>
+    <link href="{{ url_for('static', filename='semantic.min.css') }}" rel="stylesheet" type="text/css"/>
+    <script src="/static/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='semantic.min.js') }}"></script>
+
+</head>
+<body>
+
+<br>
+<br>
+<br>
+
+<div class="ui container">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="ui info message">
+        <i class="close icon"></i>
+        <div class="header">
+            <ul class="list">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+    {% endwith %}
+</div>

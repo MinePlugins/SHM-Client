@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta class="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{{ titre }}</title>
+    <link href="{{ url_for('static', filename='semantic.min.css') }}" rel="stylesheet" type="text/css"/>
+    <script src="/static/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='semantic.min.js') }}"></script>
+
+</head>
+<body>
+
+<div class="ui container">
+    <br>
+    <h2>Installations</h2>
+    <div class="ui steps">
+        <div class="completed  step">
+            <i class="user icon"></i>
+            <div class="content">
+                <div class="title">Etape 1</div>
+                <div class="description">Choisir un identifiant et un mot de passe</div>
+            </div>
+        </div>
+        <div class="active step">
+            <i class="server icon"></i>
+            <div class="content">
+                <div class="title">Etape 2</div>
+                <div class="description">Configuration</div>
+            </div>
+        </div>
+        <div class="disabled step">
+            <i class="info icon"></i>
+            <div class="content">
+                <div class="title">Finalisation</div>
+            </div>
+        </div>
+    </div>
+<div class="ui container segment">
+    <h1>Paramètre</h1>
+    <form class="ui form" method="post" action="install2">
+        <div class="field">
+            <label>IP du panel
+                <small>(0.0.0.0 pour laisser un accés de n'import où)</small>
+            </label>
+            <input type="text" name="ipp">
+        </div>
+        <div class="field">
+            <label>Port du panel
+                <small>(5000 par défaut)</small>
+            </label>
+            <input type="text" name="portp">
+        </div>
+        <div class="field">
+            <label>IP dy SysLog
+                <small>(L'ip du serveur de log)</small>
+            </label>
+            <input type="text" name="sysloghost">
+        </div>
+        <div class="field">
+            <label>Port du SysLog
+                <small>(3000 port du serveur de log)</small>
+            </label>
+            <input type="text" name="syslogport">
+        </div>
+        <div class="field">
+            <label>Fréquence d'envoi au SysLog
+                <small>(En seconde 60 par défaut)</small>
+            </label>
+            <input type="number" name="refreshtime">
+        </div>
+        <div class="field">
+            <label>Nom de l'appareil
+                <small>Un nom qui le caractérise</small>
+            </label>
+            <input type="text" name="name">
+        </div>
+        <div class="field">
+            <label>Serveur externe à pinger
+                <small>(http://google.fr)</small>
+            </label>
+            <input type="text" name="ext">
+        </div>
+        <div class="field">
+            <label>Passphrase
+                <small>(Ecrire une phrase quelconque qui sert de salt)</small>
+            </label>
+            <input type="text" name="passphrase" placeholder="Passphrase">
+        </div>
+        <div class="field">
+            <div class="ui toggle checkbox">
+                <input type="checkbox" name="debug" {% if debug %}checked{% endif %}>
+                <label>Mode debug</label>
+            </div>
+        </div>
+        <button class="ui button" type="submit">Envoyer</button>
+    </form>
+</div>
+</div>
+{% include 'footer.html' %}
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{% include 'header.html' %}
+<div class="ui container">
+    <h1>Log(s)</h1>
+    {% for msg in log %}
+    <div class="ui segment">
+        <div class="ui ignored code" data-type="bash" data-title="commands">
+            {{ msg }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% include 'footer.html' %}

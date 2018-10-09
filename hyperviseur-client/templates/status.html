@@ -1,0 +1,101 @@
+{% include 'header.html' %}
+<div class="ui container">
+    <h1>Utilisation</h1>
+    <div class="ui indicating progress {% if cpu >= 80 %}error{% elif cpu >= 50 %}warning {% elif cpu >= 0 %}success{% endif %}"
+         data-value="{{ cpu }}" data-percent="{{ cpu }}" data-total="100">
+        <div class="bar" style="transition-duration: 200ms; width: {{ cpu }}%;">
+            <div class="progress">{{ cpu }}%</div>
+        </div>
+        <div class="label">CPU %</div>
+    </div>
+    <br>
+    <br>
+</div>
+
+<div class="ui container">
+    <div class="ui indicating progress {% if ram >= 90 %}error{% elif ram >= 60 %}warning {% elif ram >= 0 %}success{% endif %}"
+         data-value="{{ ram }}" data-total="100">
+        <div class="bar" style="transition-duration: 200ms; width: {{ ram }}%;">
+            <div class="progress">{{ ram }}%</div>
+        </div>
+        <div class="label">RAM %</div>
+    </div>
+    <br>
+    <br>
+</div>
+<div class="ui container">
+    <div class="ui indicating progress {% if disk >= 90 %}error{% elif disk >= 60 %}warning {% elif disk >= 0 %}success{% endif %}"
+         data-value="{{ disk }}" data-total="100">
+        <div class="bar" style="transition-duration: 200ms; width: {{ disk }}%;">
+            <div class="progress">{{ disk }}%</div>
+        </div>
+        <div class="label">DISK %</div>
+    </div>
+    <br>
+
+    <hr>
+    <br>
+    <br>
+</div>
+<div class="ui container">
+    <h1>Température</h1>
+    <div class="ui indicating progress {% if temp[0] >= 70 %}error{% elif temp[0] >= 40 %}warning {% elif temp[0] >= 0 %}success{% endif %}"
+         data-value="{{ temp[0] }}" data-total="100">
+        <div class="bar" style="transition-duration: 200ms; width: {{ temp[0] }}%;">
+            <div class="progress">{{ temp[0] }}°C</div>
+        </div>
+        <div class="label">Température CPU °C</div>
+    </div>
+    <br>
+    <br>
+</div>
+<div class="ui container">
+    <div class="ui indicating progress {% if temp[1] >= 70 %}error{% elif temp[1] >= 40 %}warning {% elif temp[1] >= 0 %}success{% endif %}"
+         data-value="{{ temp[1] }}" data-total="100">
+        <div class="bar" style="transition-duration: 200ms; width: {{ temp[1] }}%;">
+            <div class="progress">{{ temp[1] }}°C</div>
+        </div>
+        <div class="label">Température GPU °C</div>
+    </div>
+    <br>
+    <br>
+</div>
+<div class="ui segment container">
+    <h2>Information du système</h2>
+    <p>
+    <div class="ui label"><i class="desktop icon"></i> Système : {{ platform.system }}</div>
+    </p>
+    <p>
+
+    </p>
+    <div class="ui label"><i class="comment alternate outline icon"></i>Nom : {{ platform.node }}</div>
+    <p>
+    <div class="ui label"><i class="code branch icon"></i>Release : {{ platform.release }}</div>
+    </p>
+    <p>
+    <div class="ui label"><i class="terminal icon"></i>Version : {{ platform.version }}</div>
+    </p>
+    <p>
+    <div class="ui label"><i class="server icon"></i>Machine : {{ platform.machine }}</div>
+    </p>
+    <p>
+    <div class="ui label"><i class="microchip icon"></i>CPU : {{ platform.processor }}</div>
+    </p>
+</div>
+<div class="ui segment container">
+    <h2>Information de l'appareil</h2>
+    <p>
+    <div class="ui label"><i class="id card icon"></i>ID : {{ id }}</div>
+    </p>
+    <p>
+    <div class="ui label"><i class="id card icon"></i>UID : {{ uid }}</div>
+    </p>
+    <p>
+    <div class="ui label"><i class="id card icon"></i>name : {{ name }}</div>
+    </p>
+</div>
+{% include 'footer.html' %}
+
+</body>
+
+</html>

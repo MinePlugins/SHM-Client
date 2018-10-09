@@ -1,0 +1,51 @@
+{% include 'header.html' %}
+<div class="ui container">
+    <h1>Ajout du processus au monitoring</h1>
+    <br>
+    <br>
+    <div class="ui segment">
+        <h2>{{ i.name() }} {% if i.status() == "running" %}<a class="ui green basic mini label">Running</a>{%
+            else %}<a class="ui red basic mini label">{{ i.status() }}</a>{% endif %}
+        </h2>
+        <div class="ui list">
+            <div class="item">
+                <i class="address card outline icon"></i>
+                <div class="content">
+                    N° Pid : {{ i.ppid() }}
+                </div>
+            </div>
+            <div class="item">
+                <i class="microchip icon"></i>
+                <div class="content">
+                    CPU % : {{'%0.2f'| format(i.cpu_percent())}}%
+                </div>
+            </div>
+            <div class="item">
+                <i class="save outline icon"></i>
+                <div class="content">
+                    RAM % : {{'%0.2f'| format(i.memory_percent()|float)}}%
+                </div>
+            </div>
+            <div class="item">
+                {% if plateforme != "Win" %}
+                <div class="item">
+                    <i class="user icon"></i>
+                    <div class="content">
+                        User : {{ i.username() }}
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="folder icon"></i>
+                    <div class="content">
+                        Path : {{ i.cwd() }}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+{% include 'footer.html' %}
