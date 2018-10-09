@@ -47,5 +47,16 @@ Puis connectez-vous à l'adresse de votre machine avec le port 5000
 
 # Configuration
 
-Connectez-vous grâce à l'adresse IP:5000 de la machine (http://localhost:5000) et suivez l'utilitaire d'installation
+Connectez-vous grâce à l'adresse IP:5000 de la machine [http://localhost:5000](http://localhost:5000) et suivez l'utilitaire d'installation
 
+## Etape 1 (Identifiant)
+
+Le mot de passe doit être d'au moins 8 caractères
+
+![Etape 1](https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/images/install_etape_1.png)
+
+## Etape 2 (Configuration)
+
+Le mot de passe doit être d'au moins 8 caractères
+
+![Etape 2](https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/images/install_etape_2.png)
