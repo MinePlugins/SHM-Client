@@ -87,7 +87,10 @@ def startup():
             pass
         monitoring = json.loads(DEFAULT_MONITORING)
     else:
-        monitoring = json.load(open(PATH_MONITORING))
+        try:
+            monitoring = json.load(open(PATH_MONITORING))
+        except:
+            monitoring = json.loads(DEFAULT_MONITORING)
 
     if not os.path.exists(PATH_LOG):
         with open(PATH_LOG, 'w', encoding='utf-8'):
