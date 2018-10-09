@@ -407,7 +407,9 @@ def index():
         logger("Accés à la page Accueil", "debug")
     try:
         if 'username' in session:
-            return render_template('index.html', username=session['username'], titre="SHM",
+            r = requests.get('')
+            ping = r.elapsed.microseconds / 1000
+            return render_template('index.html', username=session['username'], version= titre="SHM",
                                    id=data['config']['id'])
     except:
         return render_template('login.html', titre="SHM")
