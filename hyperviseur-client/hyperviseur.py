@@ -58,6 +58,7 @@ stopped = False
 ping = None
 pingext = None
 
+
 def logger(msg, type="info"):
     x = datetime.datetime.now()
     f = open(PATH_LOG, "a+", encoding='utf-8')
@@ -77,10 +78,13 @@ def startup():
         process.communicate()
         process2 = subprocess.Popen(bashCommand2.split(), stdout=subprocess.PIPE)
         process2.communicate()
+
     if not os.path.exists(PATH_FOLDER):
         os.makedirs(PATH_FOLDER)
+
     if not os.path.exists(PATH_MONITORING):
-        with open(PATH_MONITORING, 'w', encoding='utf-8'): pass
+        with open(PATH_MONITORING, 'w', encoding='utf-8'):
+            pass
         monitoring = json.loads(DEFAULT_MONITORING)
     else:
         monitoring = json.load(open(PATH_MONITORING))
