@@ -68,6 +68,22 @@ def logger(msg, type="info"):
     f.close()
 
 
+def datawrite():
+    global data
+    tsyslog.sendUpdate()
+    logger("Modification des données", "warning")
+    with open(PATH_DATA, 'w') as outfile:
+        json.dump(data, outfile)
+
+
+def monitoringwrite():
+    global monitoring
+    logger("Modification des monitorings", "warning")
+    with open(PATH_MONITORING, 'w') as outfile:
+        print(monitoring)
+        json.dump(monitoring, outfile)
+
+
 def startup():
     global data
     global monitoring
@@ -86,6 +102,7 @@ def startup():
         with open(PATH_MONITORING, 'w', encoding='utf-8'):
             pass
         monitoring = json.loads(DEFAULT_MONITORING)
+        monitoringwrite()
     else:
         monitoring = json.load(open(PATH_MONITORING))
     if not os.path.exists(PATH_LOG):
@@ -97,6 +114,7 @@ def startup():
         with open(PATH_DATA, 'w', encoding='utf-8'):
             pass
         data = json.loads(DEFAULT_CONFIG)
+        datawrite()
     else:
         data = json.load(open(PATH_DATA))
 
@@ -104,20 +122,6 @@ def encrypt_string(text):
     sha_signature = \
         hashlib.sha256(text.encode()).hexdigest()
     return sha_signature
-
-def datawrite():
-    global data
-    tsyslog.sendUpdate()
-    logger("Modification des données", "warning")
-    with open(PATH_DATA, 'w') as outfile:
-        json.dump(data, outfile)
-
-def monitoringwrite():
-    global monitoring
-    logger("Modification des monitorings", "warning")
-    with open(PATH_MONITORING, 'w') as outfile:
-        print(monitoring)
-        json.dump(monitoring, outfile)
 
 def measure_temps():
     if osn == "TB":
