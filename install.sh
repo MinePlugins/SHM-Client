@@ -13,8 +13,8 @@ sudo apt-get install git cron python3 python3-pip python3-setuptools python3-num
 
 echo "${green}Clone du repository SHM${reset}"
 sudo mkdir /home/SHM
-sudo cd /home/SHM
-sudo rm -rf SHM-Client
+cd /home/SHM
+rm -rf SHM-Client
 sudo git clone https://github.com/MinePlugins/SHM-Client.git
 
 echo "${green}Ajout au crontab reboot${reset}"
