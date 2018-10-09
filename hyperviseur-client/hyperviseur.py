@@ -159,6 +159,19 @@ def reboot():
     return render_template('index.html', titre="SHM")
 
 
+@app.route('/update')
+def update():
+    try:
+        if 'username' in session:
+            bashCommand = "cd /home/SHM/SHM-Client && sudi git pull"
+            process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+            process.communicate()
+            return redirect(url_for('reboot'))
+    except:
+        return render_template('login.html', titre="SHM")
+    return render_template('index.html', titre="SHM")
+
+
 @app.route('/install', methods=['GET', 'POST'])
 def install():
     if request.method == 'POST':
