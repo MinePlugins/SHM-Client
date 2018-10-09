@@ -87,10 +87,7 @@ def startup():
             pass
         monitoring = json.loads(DEFAULT_MONITORING)
     else:
-        try:
-            monitoring = json.load(open(PATH_MONITORING))
-        except:
-            monitoring = json.loads(DEFAULT_MONITORING)
+        monitoring = json.load(open(PATH_MONITORING))
 
     if not os.path.exists(PATH_LOG):
         with open(PATH_LOG, 'w', encoding='utf-8'):
@@ -102,10 +99,7 @@ def startup():
             pass
         data = json.loads(DEFAULT_CONFIG)
     else:
-        try:
-            data = json.load(open(PATH_DATA))
-        except:
-            data = json.loads(DEFAULT_CONFIG)
+        data = json.load(open(PATH_DATA))
 
 
 def encrypt_string(text):
