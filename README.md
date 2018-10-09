@@ -2,14 +2,14 @@
 
 Un utilitaire de gestion de machine tel que WIndows / Linux / Mac OSX mais optimisé pour TinkerBoard et Raspberry Pi
 
-# Installation automatique
+# Installation automatique (Linux Only)
 
 Pour installer le coté client il suffit d'éxécuter cette commande en linux :
 ```bash
 curl https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/install.sh | sudo bash
 ```
 
-# Dependence
+# Dépendences
 
 - curl
 - git
@@ -19,7 +19,7 @@ curl https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/install.sh 
   - Psutil
   - Hashlib
 
-# Installation manuel
+# Installation manuelle (Linux Only)
 
 ```bash
 sudo apt-get update
@@ -38,3 +38,9 @@ python3 hyperviseur.py
 ```
 
 Puis connectez-vous à l'adresse de votre machine avec le port 5000
+
+# Installation Windows
+
+- Cloner le git
+- Installer Python3 et les dépendances
+- Lancer le script python
