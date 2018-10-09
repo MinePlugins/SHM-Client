@@ -163,7 +163,7 @@ def reboot():
 def update():
     try:
         if 'username' in session:
-            bashCommand = "cd /home/SHM/SHM-Client && sudi git pull"
+            bashCommand = "cd /home/SHM/SHM-Client && sudo git pull"
             process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
             process.communicate()
             return redirect(url_for('reboot'))
