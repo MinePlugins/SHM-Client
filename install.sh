@@ -21,6 +21,7 @@ echo "${green}Ajout au crontab reboot${reset}"
 
 line="@reboot ./home/SHM/SHM-Client/start.sh"
 (crontab -l; echo "$line" ) | crontab -
+(crontab -l; echo "$line" ) | crontab -
 
 echo "${green}Installation des paquet python${reset}"
 
