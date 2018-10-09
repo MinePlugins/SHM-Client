@@ -10,7 +10,7 @@
         <div class="content">
             <div class="header">{{ i[0].name() }} {% if i[0].status() == "running" %}<a
                     class="ui green basic mini label">Running</a>{%
-                elif i[0].status() == "sleeping" %}<a class="ui orange basic mini label">{% else %}
+                elif i[0].status() == "sleeping" %}<a class="ui orange basic mini label">Sleeping</a>{% else %}
                     <a class="ui red basic mini label">{{ i[0].status() }}</a>{% endif %}
             </div>
         </div>

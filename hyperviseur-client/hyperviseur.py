@@ -144,6 +144,21 @@ def success():
     datawrite()
     return render_template('success.html', titre="SHM")
 
+
+@app.route('/reboot')
+def reboot():
+    try:
+        if 'username' in session:
+            bashCommand = "sudo reboot"
+            process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+            process.communicate()
+            return render_template('index.html', username=session['username'], titre="SHM",
+                                   id=data['config']['id'])
+    except:
+        return render_template('login.html', titre="SHM")
+    return render_template('index.html', titre="SHM")
+
+
 @app.route('/install', methods=['GET', 'POST'])
 def install():
     if request.method == 'POST':
@@ -379,12 +394,12 @@ def index():
         logger("Accés à la page Accueil", "debug")
     try:
         if 'username' in session:
-            return render_template('index.html', username=session['username'], titre="Genius-Hello",
+            return render_template('index.html', username=session['username'], titre="SHM",
                                    id=data['config']['id'])
     except:
-        return render_template('login.html', titre="Genius-Hello")
+        return render_template('login.html', titre="SHM")
     else:
-        return render_template('login.html', titre="Genius-Hello")
+        return render_template('login.html', titre="SHM")
 
 
 class syslog(Thread):
