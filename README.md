@@ -60,3 +60,27 @@ Le mot de passe doit être d'au moins 8 caractères
 Le mot de passe doit être d'au moins 8 caractères
 
 ![Etape 2](https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/images/install_etape_2.png)
+
+## Etape 3 (Finalisation)
+
+Cette étapes mets du temps, alors soyez patient, a la fin de cette étapes cliquer sur le bouton vert
+
+![Etape 3](https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/images/install_etape_3.png)
+
+# Les pages
+
+## Status
+
+Page qui renseigne sur l'utilisation de la machine
+
+![Status](https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/images/status.png)
+
+## Log
+
+Page qui renseigne sur les log du panel
+
+![Status](https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/images/log.png)
+
+## Processus
+
+Page qui renseigne sur les processus de la machine
