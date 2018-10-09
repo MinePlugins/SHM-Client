@@ -15,7 +15,7 @@ echo "${green}Clone du repository SHM${reset}"
 
 cd /home/linaro
 rm -rf SHM-Client
-git clone http://git.estiam.com/quentin.cournut/SHM-Client.git
+git clone https://github.com/MinePlugins/SHM-Client.git
 
 echo "${green}Ajout au crontab reboot${reset}"
 
