@@ -407,9 +407,13 @@ def index():
         logger("Accés à la page Accueil", "debug")
     try:
         if 'username' in session:
-            r = requests.get('')
-            ping = r.elapsed.microseconds / 1000
-            return render_template('index.html', username=session['username'], version= titre="SHM",
+            try:
+                r = requests.get('https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/version.txt')
+                vo = r.content
+            except:
+                vo = NaN
+            return render_template('index.html', username=session['username'], version=data['config']['version'],
+                                   vero=vo, titre="SHM",
                                    id=data['config']['id'])
     except:
         return render_template('login.html', titre="SHM")
