@@ -24,6 +24,7 @@ line="@reboot ./home/linaro/SHM-Client/start.sh"
 
 echo "${green}Installation des paquet python${reset}"
 
+
 sudo pip3 install requests
 sudo pip3 install hashlib
 sudo pip3 install flask
