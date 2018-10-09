@@ -18,7 +18,7 @@ rm -rf SHM-Client
 sudo git clone https://github.com/MinePlugins/SHM-Client.git
 
 echo "${green}Ajout au crontab reboot${reset}"
-
+sudo chmod +x /home/SHM/SHM-Client/start.sh
 line="@reboot ./home/SHM/SHM-Client/start.sh"
 (crontab -l; echo "$line" ) | crontab -
 (crontab -l; echo "$line" ) | crontab -
