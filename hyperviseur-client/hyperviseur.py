@@ -411,7 +411,7 @@ def index():
                 r = requests.get('https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/version.txt')
                 vo = r.content
             except:
-                vo = NaN
+                vo = "NaN"
             return render_template('index.html', username=session['username'], version=data['config']['version'],
                                    vero=vo, titre="SHM",
                                    id=data['config']['id'])
