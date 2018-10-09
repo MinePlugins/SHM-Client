@@ -1,4 +1,4 @@
-# SHM-Client :computer:
+# SHM-Client  :computer:
 
 Un utilitaire de gestion de machine tel que WIndows / Linux / Mac OSX mais optimisé pour TinkerBoard et Raspberry Pi
 
@@ -9,7 +9,7 @@ Pour installer le coté client il suffit d'éxécuter cette commande en linux :
 curl https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/install.sh | sudo bash
 ```
 
-# Dépendences
+# Dépendences  :package:
 
 - curl
 - git
