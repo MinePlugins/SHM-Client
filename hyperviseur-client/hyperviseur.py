@@ -100,9 +100,12 @@ def startup():
     if not os.path.exists(PATH_DATA):
         with open(PATH_DATA, 'w', encoding='utf-8'):
             pass
+        print("Why??")
         data = json.loads(DEFAULT_CONFIG)
     else:
         data = json.load(open(PATH_DATA))
+        print(data)
+
 
 
 def encrypt_string(text):
@@ -433,10 +436,11 @@ class syslog(Thread):
     def run(self):
         global ping
         global pingext
-        if len(data['config']['uid']) < 5 and data['config']['uid'] == None:
+        if len(data['config']['uid']) < 5 or data['config']['uid'] == None:
             self.first()
         else:
             while True:
+
                 url = "http://" + str(self.ip) + ":" + str(self.port) + "/state/" + str(data['config']['uid'])
 
                 try:
@@ -469,7 +473,6 @@ class syslog(Thread):
 
     def first(self):
         try:
-            print(str(self.ip) + ":" + str(self.port))
             url = "http://" + str(self.ip) + ":" + str(self.port) + "/devices"
             r = requests.post(url,
                               data={'system': self.platform.system, 'cpu': self.platform.processor,

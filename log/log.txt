@@ -1,0 +1,27 @@
+[2018-10-9][17:54:40] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:54:41] [debug] Ping SysLog : 254.006ms | Ping Ext : 126.109ms
+[2018-10-9][17:54:41] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:54:55] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:54:55] [debug] Ping SysLog : 93.481ms | Ping Ext : 157.584ms
+[2018-10-9][17:54:55] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:54:56] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:54:56] [debug] Ping SysLog : 128.145ms | Ping Ext : 126.739ms
+[2018-10-9][17:54:57] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:10] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:11] [debug] Ping SysLog : 86.652ms | Ping Ext : 174.202ms
+[2018-10-9][17:55:11] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:12] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:12] [debug] Ping SysLog : 105.278ms | Ping Ext : 186.043ms
+[2018-10-9][17:55:12] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:26] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:27] [debug] Ping SysLog : 94.579ms | Ping Ext : 146.745ms
+[2018-10-9][17:55:27] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:28] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:28] [debug] Ping SysLog : 289.002ms | Ping Ext : 143.959ms
+[2018-10-9][17:55:28] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:42] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:42] [debug] Ping SysLog : 116.818ms | Ping Ext : 149.421ms
+[2018-10-9][17:55:42] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:44] [debug] Reponse de l'envoie de l'etat 200
+[2018-10-9][17:55:44] [debug] Ping SysLog : 258.907ms | Ping Ext : 132.676ms
+[2018-10-9][17:55:44] [debug] Reponse de l'envoie de l'etat 200
