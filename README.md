@@ -1,5 +1,6 @@
 # SHM-Client  :computer:
-
+<a><img src="https://img.shields.io/badge/python-3.x-blue.svg"></a>
+<a href="https://github.com/batteurMDR/shm-server/tree/dev" target="_blank"><img src="https://img.shields.io/badge/server-nodejs-brightgreen.svg"></a><br>
 Un utilitaire de gestion de machine tel que WIndows / Linux / Mac OSX mais optimisé pour TinkerBoard et Raspberry Pi
 
 # Installation automatique (Linux Only)
