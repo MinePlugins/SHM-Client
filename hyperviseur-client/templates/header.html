@@ -22,8 +22,13 @@
         <a href="/config" class="item">Configuration</a>
         <a href="/pid" class="item">Processus Status</a>
         <a href="/console" class="item">Terminal</a>
-        <a href="/logout" class="item right">{{ username }}</a>
-
+            <div class="item">
+                <a class="ui button red" href="reboot">Reboot</a>
+            </div>
+            <div class="item">
+                <a class="ui button green" href="update">Update</a>
+            </div>
+            <a href="/logout" class="item">{{ username }}</a>
     </div>
 </div>
 <br>

@@ -5,7 +5,12 @@
 
 import datetime
 import hashlib
-import json
+try:
+    import simplejson as json
+    print("Utilisation de UJSON")
+except:
+    print("Utilisation d'une ancienne méthode")
+    import json
 import os
 import platform
 import subprocess
@@ -100,11 +105,9 @@ def startup():
     if not os.path.exists(PATH_DATA):
         with open(PATH_DATA, 'w', encoding='utf-8'):
             pass
-        print("Why??")
         data = json.loads(DEFAULT_CONFIG)
     else:
         data = json.load(open(PATH_DATA))
-        print(data)
 
 
 
@@ -115,10 +118,14 @@ def encrypt_string(text):
 
 def datawrite():
     global data
+    start = time.time()
     tsyslog.sendUpdate()
-    logger("Modification des données", "warning")
+    logger("Moddification des donnés", "warning")
     with open(PATH_DATA, 'w') as outfile:
         json.dump(data, outfile)
+    end = time.time()
+    print(end - start)
+
 
 def monitoringwrite():
     global monitoring
@@ -141,6 +148,9 @@ def measure_temps():
 
 @app.route('/success')
 def success():
+    global tsyslog
+    tsyslog = syslog()
+    tsyslog.start()
     datawrite()
     return render_template('success.html', titre="SHM")
 
@@ -163,9 +173,11 @@ def reboot():
 def update():
     try:
         if 'username' in session:
+            logger("test", type="info")
             bashCommand = "cd /home/SHM/SHM-Client && sudo git pull"
             process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-            process.communicate()
+            (e,a) = process.communicate()
+            print(e + "|" + a)
             return redirect(url_for('reboot'))
     except:
         return render_template('login.html', titre="SHM")
@@ -405,21 +417,17 @@ def index():
         return redirect(url_for('install'))
     if data['config']['debug']:
         logger("Accés à la page Accueil", "debug")
-    try:
-        if 'username' in session:
-            try:
-                r = requests.get('https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/version.txt')
-                vo = r.content
-            except:
-                vo = "NaN"
-            return render_template('index.html', username=session['username'], version=data['config']['version'],
-                                   vero=vo, titre="SHM",
-                                   id=data['config']['id'])
-    except:
-        return render_template('login.html', titre="SHM")
+    if 'username' in session:
+        try:
+            r = requests.get('https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/version.txt')
+            vo = r.text
+        except:
+            vo = "NaN"
+        return render_template('index.html', username=session['username'], version=data['config']['version'],
+                               vero=vo, titre="SHM",
+                               id=data['config']['id'])
     else:
         return render_template('login.html', titre="SHM")
-
 
 class syslog(Thread):
     def __init__(self):
@@ -512,7 +520,7 @@ if __name__ == '__main__':
     startup()
     if data['config']['isinstall']:
         app.secret_key = data['config']['passphrase']
-    tsyslog = syslog()
-    tsyslog.start()
+        tsyslog = syslog()
+        tsyslog.start()
     app.run(host=data['config']['ip'], port=data['config']['port'], debug=data['config']['debug'])
     tsyslog.join()
