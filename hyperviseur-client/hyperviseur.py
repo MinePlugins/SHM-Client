@@ -134,6 +134,7 @@ def monitoringwrite():
         print(monitoring)
         json.dump(monitoring, outfile)
 
+
 def measure_temps():
     if osn == "TB":
         tempcpu = open("/sys/class/thermal/thermal_zone0/temp", "r+").readline()
@@ -159,11 +160,14 @@ def success():
 def reboot():
     try:
         if 'username' in session:
-            bashCommand = "sudo reboot"
-            process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-            process.communicate()
-            return render_template('index.html', username=session['username'], titre="SHM",
+            if osn == "TB" or osn == "RPI":
+                bashCommand = "sudo reboot"
+                process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+                process.communicate()
+                return render_template('index.html', username=session['username'], titre="SHM",
                                    id=data['config']['id'])
+            else:
+                os.system("shutdown -t 0 -r -f")
     except:
         return render_template('login.html', titre="SHM")
     return render_template('index.html', titre="SHM")
@@ -173,11 +177,15 @@ def reboot():
 def update():
     try:
         if 'username' in session:
-            logger("test", type="info")
-            bashCommand = "cd /home/SHM/SHM-Client && sudo git pull"
-            process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-            (e,a) = process.communicate()
-            print(e + "|" + a)
+            if osn == "TB" or osn == "RPI":
+                logger("test", type="info")
+                bashCommand = "cd /home/SHM/SHM-Client && sudo git pull"
+                process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+                (e,a) = process.communicate()
+                print(e + "|" + a)
+            else:
+                print("git pull")
+                os.system("git pull")
             return redirect(url_for('reboot'))
     except:
         return render_template('login.html', titre="SHM")
