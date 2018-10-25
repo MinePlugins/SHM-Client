@@ -444,7 +444,7 @@ class syslog(Thread):
     def run(self):
         global ping
         global pingext
-        if len(data['config']['uid']) < 5 or data['config']['uid'] == None:
+        if len(data['config']['uid']) < 8 or data['config']['uid'] is None:
             self.first()
         else:
             while True:
