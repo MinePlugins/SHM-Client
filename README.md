@@ -55,6 +55,7 @@ Connectez-vous grâce à l'adresse IP:5000 de la machine [http://localhost:5000]
 Le mot de passe doit être d'au moins 8 caractères
 
 ![Etape 1](https://raw.githubusercontent.com/MinePlugins/SHM-Client/master/images/install_etape_1.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMinePlugins%2FSHM-Client.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FMinePlugins%2FSHM-Client?ref=badge_shield)
 
 ## Etape 2 (Configuration)
 
@@ -85,3 +86,7 @@ Page qui renseigne sur les log du panel
 ## Processus
 
 Page qui renseigne sur les processus de la machine
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMinePlugins%2FSHM-Client.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FMinePlugins%2FSHM-Client?ref=badge_large)
