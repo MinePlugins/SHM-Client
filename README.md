@@ -1,4 +1,7 @@
 # SHM-Client  :computer:
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/48a847c876474ad8ba1d8c57d69f4e47)](https://app.codacy.com/app/MinePlugins/SHM-Client?utm_source=github.com&utm_medium=referral&utm_content=MinePlugins/SHM-Client&utm_campaign=Badge_Grade_Settings)
+
 <a><img src="https://img.shields.io/badge/python-3.x-blue.svg"></a>
 <a href="https://github.com/batteurMDR/shm-server/tree/dev" target="_blank"><img src="https://img.shields.io/badge/server-nodejs-brightgreen.svg"></a><br>
 Un utilitaire de gestion de machine tel que WIndows / Linux / Mac OSX mais optimisé pour TinkerBoard et Raspberry Pi
